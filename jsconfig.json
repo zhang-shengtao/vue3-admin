@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "json", "./mock/**/*"],
+  "include": ["./src/**/*", "json", "./mock/**/*", "public/emoji.js"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

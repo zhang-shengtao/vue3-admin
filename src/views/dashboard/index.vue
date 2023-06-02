@@ -7,9 +7,10 @@
     <div class="side left"></div>
     <div class="side right"></div>
   </div>
-  <div class="heart"></div>
 </template>
-<script setup name="dashboard"></script>
+<script setup name="dashboard">
+  //  123123
+</script>
 
 <style lang="scss" scoped>
   .cube {
@@ -65,7 +66,6 @@
     0% {
       transform: rotateX(0) rotateY(0) rotateZ(0);
     }
-
     100% {
       transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     }

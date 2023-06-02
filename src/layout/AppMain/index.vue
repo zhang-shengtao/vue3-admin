@@ -1,26 +1,46 @@
-<script setup>
-  import Icons from "@/components/Icon/index.vue";
-  import { Icon } from "@iconify/vue";
-</script>
+<script setup></script>
 
 <template>
-  <el-main>
-    <!-- <router-view v-slot="{ Component, route }">
+  <el-main style="background-color: #dfdbdb57; padding: 15px; overflow: hidden">
+    <router-view v-slot="{ Component, route }">
       <transition name="fade-transform" mode="out-in">
-        <keep-alive :include="KEEPALIVE">
-          <component :is="Component" :key="route.path" />
-        </keep-alive>
+        <el-scrollbar :key="route.path" style="background-color: #fff; padding: 15px; box-sizing: border-box">
+          <keep-alive>
+            <component :is="Component" :key="route.path" />
+          </keep-alive>
+        </el-scrollbar>
       </transition>
-    </router-view> -->
-    <el-icon style="vertical-align: middle" size="22" color="red">
-      <Icon icon="gg:arrow-bottom-left-o" />
-    </el-icon>
-
-    <svg aria-hidden="true">
-      <use href="#my-logo" fill="red" />
-    </svg>
-    <Icons icon="Search" />
-    <span>1213HA哈哈哈</span>
+    </router-view>
   </el-main>
 </template>
-<style lang="scss" scoped></style>
+
+<style lang="scss" scoped>
+  .elmain {
+    padding: 0;
+  }
+
+  .section {
+    width: 100%;
+    height: 100%;
+  }
+
+  .scrollbar {
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .fade-transform-leave-active,
+  .fade-transform-enter-active {
+    transition: all 0.5s;
+  }
+
+  .fade-transform-enter {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .fade-transform-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+</style>
